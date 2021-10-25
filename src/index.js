@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App/App';
+//import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
+import ServicioCustomers from './components/ServicioCustomers/ServicioCustomers';
+import BuscadorCustomer from './components/BuscadorCustomer/BuscadorCustomer';
+import BuscadorCoches from './components/BuscadorCoches/BuscadorCoches';
+import MaestroDetalleDepartamentos from './components/MaestroDetalleDepartamentos/MaestroDetalleDepartamentos';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className='App'>
+    {/* <App /> */}
+    {/* <ServicioCustomers/> */}
+    {/* <BuscadorCustomer/> */}
+    {/* <BuscadorCoches/> */}
+    <MaestroDetalleDepartamentos/>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
