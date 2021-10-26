@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Global from '../../Global'
+import MaestroDetalleEmp from './MaestroDetalleEmp';
 
-export default class MaestroDetalleDepartamentos extends Component {
+export default class MaestroDetalleDept extends Component {
    
     selectDepartamento = React.createRef();
 
     state = {
         departamentos: [],
-        empleados: [],
-        status: false
+        status: false,
+        idDepartamento: 0
     }
    
     cargarDepartamentos = () => {
@@ -25,19 +26,12 @@ export default class MaestroDetalleDepartamentos extends Component {
         });
     }
 
-    //Funcion para buscar el empleado (en esta caso por id)
     buscarEmpleados = (e) => {
         e.preventDefault();
-        var deptno = this.selectDepartamento.current.value; //Nos guardamos el valor del boton asociado al va al numero de departamento
-        var request = 'api/Empleados/EmpleadosDepartamento/'+deptno;
-        var url = Global.urlempelados;
-        axios.get(url+request).then(res => {
-            this.setState({
-                empleados: res.data
-            })
+        var deptno = this.selectDepartamento.current.value;
+        this.setState({
+            idDepartamento: parseInt(deptno)
         })
-        //console.log('hola2');
-
     }
    
     componentDidMount = () => {
@@ -58,14 +52,11 @@ export default class MaestroDetalleDepartamentos extends Component {
                     <button onClick={this.buscarEmpleados}>Mostrar empleados</button>
                 </form>
                 <hr/>
-                {this.state.empleados.length > 0 && (<ul>
-
-                    {this.state.empleados.map((e,i)=> {
-                      return(<li key={i}>{e.apellido}</li>)
-                    })}
-
-                </ul>)}
-               
+                {
+                    this.state.idDepartamento != 0 && 
+                     <MaestroDetalleEmp idDepartamento={this.state.idDepartamento}/>
+                }
+                 
             </div>
         )
     }
