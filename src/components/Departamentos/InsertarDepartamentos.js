@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Global from '../../Global';
+import { Redirect } from 'react-router';
 
 export default class InsertarDepartamentos extends Component {
 
@@ -36,7 +37,8 @@ export default class InsertarDepartamentos extends Component {
             this.setState({
                 mensaje: 'Departamento insertado correctamente',
                 status: true
-            })
+            });
+
         });
 
 
@@ -46,7 +48,11 @@ export default class InsertarDepartamentos extends Component {
     }
 
     render() {
+        if (this.state.status == true) {
+            return (<Redirect to='/'></Redirect>);
+        }
         return (
+
             <div>
                 <h1 className='m-4'>Nuevo departamento</h1>
                 <hr />
