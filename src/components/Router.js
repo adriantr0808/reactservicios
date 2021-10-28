@@ -14,7 +14,7 @@ export default class Router extends Component {
 
             <BrowserRouter>
                 {/* Parte estática */}
-                <MenuDepartamentos />
+                 <MenuDepartamentos /> 
                 <Switch>
                     {/* Parte dinamica */}
 
@@ -48,19 +48,19 @@ export default class Router extends Component {
                                 var loc = props.match.params.localidad;
                                 return (<EliminarDepartamento iddepartamento={num} nombre={nom} localidad={loc} />)
                             }
-                        }
-                    />
-                    {/* <div style={{ background: 'beige' }}>
+                        } 
+                    /> 
+                     {/* <div style={{ background: 'beige' }}>
                      
                         <Route exact path='/detallesempleado/:idempleado' render={props => {
                             var id = props.match.params.idempleado;
                             return (<DetalleEmpleadoRouter idempleado={id} />)
                         }} />
-                    </div> */}
+                    </div>  */}
                     {/* props es un nombre inventado */}
                 </Switch>
 
-                {/* <EmpleadosRouter /> */}
+                 {/* <EmpleadosRouter />  */}
             </BrowserRouter>
         )
     }

@@ -19,8 +19,8 @@ ReactDOM.render(
     {/* <ServicioCustomers/> */}
     {/* <BuscadorCustomer/> */}
     {/* <BuscadorCoches/> */}
-    {/* <MaestroDetalleDepartamentos/> */}
-    {/* <MaestroDetalleDept/> */}
+    {/* <MaestroDetalleDepartamentos/>  */}
+    {/* <MaestroDetalleDept/>  */}
     {/* <Router/> */}
  
 
